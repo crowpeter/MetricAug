@@ -32,7 +32,7 @@ If you used **MELD**, please install **ffmpeg** and run the following command to
 ffmpeg -i input.mp4 output.wav
 ```
 #### Superset generate
-Follow the scripts in these code to generate superset:
+Follow these scripts to generate superset:
 ```
 preprocessing/add_musan.py
 preprocessing/add_esc50_random.py
@@ -63,18 +63,19 @@ Once you are done, run this code to merge all noisy data.
 
 #### Step 3. Speech distortion metric clustering
 ```
-se_metric_statistical_by_gmm_metric.py
-se_metric_statistical_by_rank_metric.py
+preprocessing/metric/se_metric_statistical_by_gmm_metric.py
+preprocessing/metric/se_metric_statistical_by_rank_metric.py
 ```
-Using these two scripts to complete the clustering for speech distortion metric, the default level is 5.
+Using these two scripts to complete the level clustering for speech distortion metric, the default level is 5.
 If you have any questions for code I/O, we made examples in ``example_meta``, please check the format and file path.
 
 
 ## 6. Training
+The training code is
 ```
 train_metric_aug_GRU-TFM_main.py
 ```
-The training code is here. ``data_sample_weight.py`` shows the algorithm 1 in our paper.
+``data_sample_weight.py`` shows the algorithm 1 in our paper.
 
 ## 7. Inference on different testing set
 
